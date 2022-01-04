@@ -34,6 +34,7 @@
                     options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
                 });
                 services.AddControllers();
+                services.AddCors();
            
             }
 
@@ -49,6 +50,8 @@
                 app.UseHttpsRedirection();
 
                 app.UseRouting();
+
+                app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
 
                 app.UseAuthorization();
 
