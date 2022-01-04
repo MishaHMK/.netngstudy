@@ -51,3 +51,7 @@ D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\runtimes\win-x64\native\e_
 D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
 D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\Humanizer.dll
 D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\runtimes\linux-x64\native\libsqlite3.so
+D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\runtimes\osx-x64\native\libsqlite3.dylib
+D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\runtimes\win7-x64\native\sqlite3.dll
+D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\runtimes\win7-x86\native\sqlite3.dll
