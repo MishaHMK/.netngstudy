@@ -62,3 +62,6 @@ D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\System.IdentityModel.Token
 D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\Data\UserSeedData.json
+D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\AutoMapper.dll
+D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
