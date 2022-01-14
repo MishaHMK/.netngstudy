@@ -65,3 +65,5 @@ D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\Microsoft.IdentityModel.Pr
 D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\Data\UserSeedData.json
 D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\AutoMapper.dll
 D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\CloudinaryDotNet.dll
+D:\AngNetProject\.netngstudy\api\api\bin\Debug\net6.0\Newtonsoft.Json.dll
