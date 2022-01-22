@@ -11,8 +11,8 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220119110421_Likes")]
-    partial class Likes
+    [Migration("20220120152327_Reset")]
+    partial class Reset
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -79,6 +79,51 @@ namespace api.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("api.Models.Message", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("DateRead")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("MessageSent")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("RecipientDeleted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("RecipientId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("RecipientUsername")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("SenderDeleted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("SenderId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("SenderUsername")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RecipientId");
+
+                    b.HasIndex("SenderId");
+
+                    b.ToTable("Messages");
+                });
+
             modelBuilder.Entity("api.Models.Photo", b =>
                 {
                     b.Property<int>("Id")
@@ -119,6 +164,25 @@ namespace api.Migrations
                     b.ToTable("Likes");
                 });
 
+            modelBuilder.Entity("api.Models.Message", b =>
+                {
+                    b.HasOne("api.Models.AppUser", "Recipient")
+                        .WithMany("MessagesRecieved")
+                        .HasForeignKey("RecipientId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("api.Models.AppUser", "Sender")
+                        .WithMany("MessagesSent")
+                        .HasForeignKey("SenderId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Recipient");
+
+                    b.Navigation("Sender");
+                });
+
             modelBuilder.Entity("api.Models.Photo", b =>
                 {
                     b.HasOne("api.Models.AppUser", "AppUser")
@@ -154,6 +218,10 @@ namespace api.Migrations
                     b.Navigation("LikedByUsers");
 
                     b.Navigation("LikedUsers");
+
+                    b.Navigation("MessagesRecieved");
+
+                    b.Navigation("MessagesSent");
 
                     b.Navigation("Photos");
                 });
