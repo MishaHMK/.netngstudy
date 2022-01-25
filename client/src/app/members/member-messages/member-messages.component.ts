@@ -25,4 +25,5 @@ export class MemberMessagesComponent implements OnInit {
       this.messageForm.reset();
     })
   }
+
 }

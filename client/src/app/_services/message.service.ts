@@ -1,8 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
+import { BehaviorSubject, take } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { MessagesComponent } from '../messages/messages.component';
 import { Message } from '../_models/message';
 import { getPaginatedResult, getPaginationHeaders } from '../_models/paginationHelper';
+import { User } from '../_models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +33,4 @@ export class MessageService {
   deleteMessage(id: number) {
     return this.http.delete(this.baseUrl + 'messages/' + id);
   }
-
 }
