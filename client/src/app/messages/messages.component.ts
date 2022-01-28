@@ -19,7 +19,7 @@ export class MessagesComponent implements OnInit {
   constructor(private messageService: MessageService) { }
 
   ngOnInit(): void {
-    //this.loadMessages();
+    this.loadMessages();
   }
 
   loadMessages() {

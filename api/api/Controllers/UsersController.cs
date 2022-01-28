@@ -33,7 +33,7 @@ namespace api.Controllers
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
       
             user.LastActive = DateTime.Now;
-            userParams.CurrentUsername = "biba";
+            userParams.CurrentUsername = User.GetUsername();
 
             if (string.IsNullOrEmpty(userParams.Gender))
                 userParams.Gender = user.Gender == "male" ? "female" : "male";
@@ -49,7 +49,9 @@ namespace api.Controllers
         [HttpGet("{username}", Name = "GetUser")]
         public async Task<ActionResult<MemberDTO>> GetUser(string username)
         {
-            return await _userRepository.GetMemberAsync(username);
+            var currentUsername = User.GetUsername();
+
+            return await _userRepository.GetMemberAsync(username, isCurrentUser: currentUsername == username);
         }
 
         [HttpPut]
@@ -81,11 +83,6 @@ namespace api.Controllers
                 Url = result.SecureUrl.AbsoluteUri,
                 PublicId = result.PublicId
             };
-
-            if (user.Photos.Count == 0)
-            {
-                photo.IsMain = true;
-            }
 
             user.Photos.Add(photo);
 

@@ -10,7 +10,7 @@
     using api.Interfaces;
     using api.Middleware;
     using api.Services;
-    using api.SignalR;
+    //using api.SignalR;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -64,8 +64,8 @@
                 app.UseEndpoints(endpoints =>
                 {
                     endpoints.MapControllers();
-                    endpoints.MapHub<PresenceHub>("hubs/presence");
-                    endpoints.MapHub<MessageHub>("hubs/message");
+                    //endpoints.MapHub<PresenceHub>("hubs/presence");
+                    //endpoints.MapHub<MessageHub>("hubs/message");
                 });
             }
         }
